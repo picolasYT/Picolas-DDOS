@@ -1,27 +1,4 @@
-const http = require('http');
-const https = require('https');
-const readline = require('readline');
-
-let axios;
-try {
-    axios = require('axios');
-} catch (err) {
-    console.error('Error: axios no está instalado. Por favor, instálalo usando `npm install axios`.');
-    process.exit(1);
-}
-
-// Banner
-const banner = `
-  ______  _______ _______ _______ _______ _______ _______ _______
- |   _  \\|       |       |   _   |       |       |       |   _   |
- |  |_  ||   _   |   _   |  |_|  |   _   |   _   |   _   |  |_|  |
- |       ||  | |  |  | |  |       |  | |  |  | |  |  | |  |       |
- |  _    ||  |_|  |  |_|  |       |  |_|  |  |_|  |  |_|  |  _    |
- |_| |_| |       |       |   _   |       |       |       |_| |_| |
- |   |   |  _    |  _    |  | |  |   _   |  _    |  _    |   |   |
- |___|   |_| |_| |_| |_| |__| |__|__| |__|_| |_| |_| |_| |___|   |
-`;
-
+const http = require('http');                                               const https = require('https');                                             const readline = require('readline');                                                                                                                   let axios;                                                                  try {                                                                           axios = require('axios');                                               } catch (err) {                                                                 console.error('Error: axios no está instalado. Por favor, instálalo usando `npm install axios`.');                                                      process.exit(1);                                                        }                                                                                                                                                       // Banner                                                                   const banner = `                                                              ______  _______ _______ _______ _______ _______ _______ _______            |   _  \\|       |       |   _   |       |       |       |   _   |          |  |_  ||   _   |   _   |  |_|  |   _   |   _   |   _   |  |_|  |           |       ||  | |  |  | |  |       |  | |  |  | |  |  | |  |       |          |  _    ||  |_|  |  |_|  |       |  |_|  |  |_|  |  |_|  |  _    |          |_| |_| |       |       |   _   |       |       |       |_| |_| |           |   |   |  _    |  _    |  | |  |   _   |  _    |  _    |   |   |           |___|   |_| |_| |_| |_| |__| |__|__| |__|_| |_| |_| |_| |___|   |          `;                                                                          
 console.log(banner);
 
 // Función para descargar la lista de proxies
@@ -70,7 +47,9 @@ async function ddosAttack(target, numRequests, proxies, duration) {
 const proxyListUrls = [
     'https://raw.githubusercontent.com/TheSpeedX/PROXY-List/refs/heads/master/http.txt',
     'https://raw.githubusercontent.com/proxifly/free-proxy-list/refs/heads/main/proxies/all/data.txt',
-    'https://raw.githubusercontent.com/jetkai/proxy-list/refs/heads/main/online-proxies/txt/proxies-http.txt'
+    'https://raw.githubusercontent.com/jetkai/proxy-list/refs/heads/main/online-proxies/txt/proxies-http.txt',
+    'https://raw.githubusercontent.com/zloi-user/hideip.me/raw/refs/heads/master/http.txt',
+    'https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/http.txt' // Nueva URL de proxies
 ];
 
 // Crear interfaz de línea de comandos
