@@ -50,7 +50,6 @@ const proxyListUrls = [
     'https://raw.githubusercontent.com/jetkai/proxy-list/refs/heads/main/online-proxies/txt/proxies-http.txt',
     'https://raw.githubusercontent.com/zloi-user/hideip.me/raw/refs/heads/master/http.txt',
     'https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/http.txt'
-    'https://raw.githubusercontent.com/zloi-user/hideip.me/refs/heads/master/https.txt'
 ];
 
 // Crear interfaz de línea de comandos
