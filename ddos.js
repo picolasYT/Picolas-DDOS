@@ -70,7 +70,7 @@ async function ddosAttack(target, numRequests, proxies, duration) {
 const proxyListUrls = [
     'https://raw.githubusercontent.com/TheSpeedX/PROXY-List/refs/heads/master/http.txt',
     'https://raw.githubusercontent.com/proxifly/free-proxy-list/refs/heads/main/proxies/all/data.txt',
-    'https://raw.githubusercontent.com/jetkai/proxy-list/refs/heads/main/online-proxies/txt/proxies-http.txt'
+    'https://raw.githubusercontent.com/jetkai/proxy-list/refs/heads/main/online-proxies/txt/proxies-http.txt',
     'https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/http.txt'
 ];
 
